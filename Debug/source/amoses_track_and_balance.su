@@ -1,0 +1,16 @@
+C:\amoses_workspace\track_and_balance\drivers/fsl_clock.h:987:20:CLOCK_EnableClock	24	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_gpio.h:153:20:GPIO_PinWrite	24	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_iocon.h:182:22:IOCON_PinMuxSet	24	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_power.h:385:20:POWER_DisablePD	16	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_ctimer.h:497:20:CTIMER_StartTimer	16	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_lpadc.h:876:20:LPADC_DoSoftwareTrigger	16	static
+C:\amoses_workspace\track_and_balance\drivers/fsl_anactrl.h:356:20:ANACTRL_EnableVref1V	16	static
+../source/amoses_track_and_balance.c:67:6:init_adc	96	static
+../source/amoses_track_and_balance.c:116:6:init_gpio	24	static
+../source/amoses_track_and_balance.c:161:6:init_tach_pinint	16	static
+../source/amoses_track_and_balance.c:172:6:init_rpm_timer	16	static
+../source/amoses_track_and_balance.c:214:6:adc_trigger_callback	24	static
+../source/amoses_track_and_balance.c:250:6:strobe_callback	8	static
+../source/amoses_track_and_balance.c:254:6:strobe_flash	16	static
+../source/amoses_track_and_balance.c:262:6:anti_strobe_callback	8	static
+../source/amoses_track_and_balance.c:266:6:tach_callback	24	static

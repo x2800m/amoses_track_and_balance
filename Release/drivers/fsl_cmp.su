@@ -1,0 +1,4 @@
+../drivers/fsl_cmp.c:34:6:CMP_Init	8	static
+../drivers/fsl_cmp.c:82:6:CMP_Deinit	0	static
+../drivers/fsl_cmp.c:102:6:CMP_GetDefaultConfig	8	static
+../drivers/fsl_cmp.c:118:6:CMP_SetVREF	8	static

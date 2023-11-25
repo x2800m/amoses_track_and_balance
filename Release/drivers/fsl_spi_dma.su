@@ -1,0 +1,9 @@
+../drivers/fsl_spi_dma.c:98:13:XferToFifoWR	0	static
+../drivers/fsl_spi_dma.c:469:13:SPI_RxDMACallback	4	static
+../drivers/fsl_spi_dma.c:489:13:SPI_TxDMACallback	4	static
+../drivers/fsl_spi_dma.c:104:13:SpiConfigToFifoWR.isra	0	static
+../drivers/fsl_spi_dma.c:155:10:SPI_MasterTransferCreateHandleDMA	32	static
+../drivers/fsl_spi_dma.c:213:10:SPI_MasterTransferDMA	104	static
+../drivers/fsl_spi_dma.c:416:10:SPI_MasterHalfDuplexTransferDMA	32	static
+../drivers/fsl_spi_dma.c:515:6:SPI_MasterTransferAbortDMA	8	static
+../drivers/fsl_spi_dma.c:540:10:SPI_MasterTransferGetCountDMA	16	static

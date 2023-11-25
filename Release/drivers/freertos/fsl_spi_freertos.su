@@ -1,0 +1,4 @@
+../drivers/freertos/fsl_spi_freertos.c:16:13:SPI_RTOS_Callback	16	static
+../drivers/freertos/fsl_spi_freertos.c:36:10:SPI_RTOS_Init	24	static
+../drivers/freertos/fsl_spi_freertos.c:83:10:SPI_RTOS_Deinit	8	static
+../drivers/freertos/fsl_spi_freertos.c:101:10:SPI_RTOS_Transfer	16	static

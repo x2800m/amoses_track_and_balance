@@ -1,0 +1,7 @@
+../drivers/fsl_utick.c:190:6:UTICK_HandleIRQ	0	static
+../drivers/fsl_utick.c:95:6:UTICK_SetTick	12	static
+../drivers/fsl_utick.c:117:6:UTICK_Init	8	static
+../drivers/fsl_utick.c:143:6:UTICK_Deinit	0	static
+../drivers/fsl_utick.c:161:10:UTICK_GetStatusFlags	0	static
+../drivers/fsl_utick.c:174:6:UTICK_ClearStatusFlags	0	static
+../drivers/fsl_utick.c:201:6:UTICK0_DriverIRQHandler	0	static

@@ -1,0 +1,5 @@
+../drivers/fsl_wwdt.c:92:6:WWDT_GetDefaultConfig	8	static
+../drivers/fsl_wwdt.c:135:6:WWDT_Init	8	static
+../drivers/fsl_wwdt.c:213:6:WWDT_Deinit	0	static
+../drivers/fsl_wwdt.c:229:6:WWDT_Refresh	0	static
+../drivers/fsl_wwdt.c:253:6:WWDT_ClearStatusFlags	0	static

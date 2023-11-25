@@ -1,0 +1,11 @@
+../drivers/fsl_prince.c:180:10:PRINCE_GenNewIV	608	static
+../drivers/fsl_prince.c:456:10:PRINCE_GetRegionSREnable	0	static
+../drivers/fsl_prince.c:494:10:PRINCE_GetRegionBaseAddress	0	static
+../drivers/fsl_prince.c:532:10:PRINCE_SetRegionIV	0	static
+../drivers/fsl_prince.c:251:10:PRINCE_LoadIV	32	static
+../drivers/fsl_prince.c:27:22:PRINCE_CheckerAlgorithm	104	static
+../drivers/fsl_prince.c:582:10:PRINCE_SetRegionBaseAddress	0	static
+../drivers/fsl_prince.c:635:10:PRINCE_SetRegionSREnable	0	static
+../drivers/fsl_prince.c:304:10:PRINCE_SetEncryptForAddressRange	608	static
+../drivers/fsl_prince.c:689:10:PRINCE_FlashEraseWithChecker	24	static
+../drivers/fsl_prince.c:733:10:PRINCE_FlashProgramWithChecker	24	static

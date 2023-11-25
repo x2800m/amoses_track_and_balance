@@ -1,0 +1,5 @@
+../drivers/fsl_plu.c:73:6:PLU_Init	0	static
+../drivers/fsl_plu.c:91:6:PLU_Deinit	0	static
+../drivers/fsl_plu.c:110:6:PLU_GetDefaultWakeIntConfig	8	static
+../drivers/fsl_plu.c:136:6:PLU_EnableWakeIntRequest	0	static
+../drivers/fsl_plu.c:155:6:PLU_ClearLatchedInterrupt	0	static

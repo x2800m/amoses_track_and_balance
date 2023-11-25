@@ -1,0 +1,12 @@
+C:\amoses_workspace\track_and_balance\drivers/fsl_wwdt.h:178:24:WWDT_GetStatusFlags	16	static
+../source/amoses_core_functions.c:73:6:data_processing_task	32	static
+../source/amoses_core_functions.c:94:7:convert_deg_to_clock	16	static
+../source/amoses_core_functions.c:99:6:print_data	80	static
+../source/amoses_core_functions.c:159:6:data_processing_function	16	static
+../source/amoses_core_functions.c:231:6:data_telemetry_function	8	static
+../source/amoses_core_functions.c:235:6:kb_input_task	16	static
+../source/amoses_core_functions.c:242:6:kb_input_function	16	static
+../source/amoses_core_functions.c:285:14:average_raw_adc_values	24	static
+../source/amoses_core_functions.c:297:6:shift_and_generate_averages	16	static
+../source/amoses_core_functions.c:326:6:watchdog_kicker_task	24	static
+../source/amoses_core_functions.c:334:6:init_watchdog	32	static

@@ -1,0 +1,13 @@
+../drivers/fsl_ostimer.c:70:17:OSTIMER_GetInstance	0	static
+../drivers/fsl_ostimer.c:95:17:OSTIMER_GrayToDecimalbyCodeGray	0	static
+../drivers/fsl_ostimer.c:354:6:OSTIMER_HandleIRQ	0	static
+../drivers/fsl_ostimer.c:115:10:OSTIMER_GrayToDecimal	0	static
+../drivers/fsl_ostimer.c:163:6:OSTIMER_Init	8	static
+../drivers/fsl_ostimer.c:189:6:OSTIMER_Deinit	0	static
+../drivers/fsl_ostimer.c:209:10:OSTIMER_GetStatusFlags	0	static
+../drivers/fsl_ostimer.c:224:6:OSTIMER_ClearStatusFlags	0	static
+../drivers/fsl_ostimer.c:327:10:OSTIMER_GetCurrentTimerValue	0	static
+../drivers/fsl_ostimer.c:243:10:OSTIMER_SetMatchRawValue	24	static
+../drivers/fsl_ostimer.c:311:10:OSTIMER_SetMatchValue	0	static
+../drivers/fsl_ostimer.c:345:10:OSTIMER_GetCaptureValue	0	static
+../drivers/fsl_ostimer.c:376:6:OS_EVENT_DriverIRQHandler	0	static

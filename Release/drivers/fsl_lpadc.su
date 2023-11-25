@@ -1,0 +1,14 @@
+../drivers/fsl_lpadc.c:113:6:LPADC_Init	0	static
+../drivers/fsl_lpadc.c:222:6:LPADC_GetDefaultConfig	8	static
+../drivers/fsl_lpadc.c:260:6:LPADC_Deinit	0	static
+../drivers/fsl_lpadc.c:281:6:LPADC_GetConvResult	0	static
+../drivers/fsl_lpadc.c:339:6:LPADC_SetConvTriggerConfig	8	static
+../drivers/fsl_lpadc.c:378:6:LPADC_GetDefaultConvTriggerConfig	8	static
+../drivers/fsl_lpadc.c:402:6:LPADC_SetConvCommandConfig	16	static
+../drivers/fsl_lpadc.c:515:6:LPADC_GetDefaultConvCommandConfig	8	static
+../drivers/fsl_lpadc.c:643:6:LPADC_DoOffsetCalibration	0	static
+../drivers/fsl_lpadc.c:669:6:LPADC_PrepareAutoCalibration	0	static
+../drivers/fsl_lpadc.c:682:6:LPADC_FinishAutoCalibration	12	static
+../drivers/fsl_lpadc.c:657:6:LPADC_DoAutoCalibration	0	static
+../drivers/fsl_lpadc.c:753:6:LPADC_GetCalibrationValue	16	static
+../drivers/fsl_lpadc.c:802:6:LPADC_SetCalibrationValue	20	static

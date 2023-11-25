@@ -1,0 +1,3 @@
+../source/amoses_core_functions.c:36:6:strobe_task	32	static
+../source/amoses_core_functions.c:52:6:tach_led_task	32	static
+../source/amoses_core_functions.c:68:6:data_processing_task	72	static

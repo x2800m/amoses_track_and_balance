@@ -1,0 +1,13 @@
+../drivers/fsl_puf.c:57:17:puf_waitForInit	0	static
+../drivers/fsl_puf.c:110:10:PUF_PowerCycle	8	static
+../drivers/fsl_puf.c:174:6:PUF_GetDefaultConfig	8	static
+../drivers/fsl_puf.c:199:10:PUF_Init	16	static
+../drivers/fsl_puf.c:251:6:PUF_Deinit	8	static
+../drivers/fsl_puf.c:294:10:PUF_Enroll	0	static
+../drivers/fsl_puf.c:363:10:PUF_Start	8	static
+../drivers/fsl_puf.c:438:10:PUF_SetIntrinsicKey	20	static
+../drivers/fsl_puf.c:528:10:PUF_SetUserKey	20	static
+../drivers/fsl_puf.c:705:10:PUF_GetHwKey	16	static
+../drivers/fsl_puf.c:813:6:PUF_IsGetKeyAllowed	0	static
+../drivers/fsl_puf.c:839:10:PUF_GetKey	16	static
+../drivers/fsl_puf.c:935:10:PUF_Zeroize	0	static

@@ -1,0 +1,3 @@
+../source/sample_filter.c:69:6:SampleFilter_init	24	static
+../source/sample_filter.c:76:6:SampleFilter_put	16	static
+../source/sample_filter.c:82:7:SampleFilter_get	32	static

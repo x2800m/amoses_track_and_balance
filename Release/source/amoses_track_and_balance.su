@@ -1,0 +1,7 @@
+../source/amoses_track_and_balance.c:216:6:adc_trigger_callback	16	static
+../source/amoses_track_and_balance.c:240:6:strobe_callback	24	static
+../source/amoses_track_and_balance.c:253:6:tach_callback	40	static
+../source/amoses_track_and_balance.c:52:6:init_adc	96	static
+../source/amoses_track_and_balance.c:111:6:init_gpio	32	static
+../source/amoses_track_and_balance.c:168:6:init_tach_pinint	8	static
+../source/amoses_track_and_balance.c:182:6:init_rpm_timer	32	static

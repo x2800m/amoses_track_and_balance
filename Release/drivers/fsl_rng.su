@@ -1,0 +1,4 @@
+../drivers/fsl_rng.c:26:13:rng_accumulateEntropy	0	static
+../drivers/fsl_rng.c:106:6:RNG_Init	8	static
+../drivers/fsl_rng.c:150:6:RNG_Deinit	8	static
+../drivers/fsl_rng.c:165:10:RNG_GetRandomData	32	static

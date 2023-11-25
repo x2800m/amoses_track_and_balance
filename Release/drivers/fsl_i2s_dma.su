@@ -1,0 +1,17 @@
+../drivers/fsl_i2s_dma.c:151:17:I2S_GetInstance	0	static
+../drivers/fsl_i2s_dma.c:101:17:I2S_EnqueueUserBuffer	32	static
+../drivers/fsl_i2s_dma.c:167:20:I2S_DisableDMAInterrupts	8	static
+../drivers/fsl_i2s_dma.c:172:20:I2S_EnableDMAInterrupts	8	static
+../drivers/fsl_dma.h:486:24:DMA_SetChannelXferConfig.constprop	12	static
+../drivers/fsl_i2s_dma.c:460:17:I2S_TransferLoopDMA	72	static
+../drivers/fsl_i2s_dma.c:718:13:I2S_AddTransferDMA	72	static
+../drivers/fsl_i2s_dma.c:637:17:I2S_StartTransferDMA	64	static
+../drivers/fsl_i2s_dma.c:189:6:I2S_TxTransferCreateHandleDMA	40	static
+../drivers/fsl_i2s_dma.c:238:10:I2S_TxTransferSendDMA	32	static
+../drivers/fsl_i2s_dma.c:276:6:I2S_TransferAbortDMA	16	static
+../drivers/fsl_i2s_dma.c:794:6:I2S_DMACallback	24	static
+../drivers/fsl_i2s_dma.c:330:6:I2S_RxTransferCreateHandleDMA	0	static
+../drivers/fsl_i2s_dma.c:350:10:I2S_RxTransferReceiveDMA	32	static
+../drivers/fsl_i2s_dma.c:448:6:I2S_TransferInstallLoopDMADescriptorMemory	0	static
+../drivers/fsl_i2s_dma.c:590:10:I2S_TransferSendLoopDMA	4	static
+../drivers/fsl_i2s_dma.c:624:10:I2S_TransferReceiveLoopDMA	4	static
