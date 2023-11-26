@@ -53,7 +53,7 @@ main-build: amoses_tab_4.axf
 amoses_tab_4.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\amoses_workspace\track_and_balance\LPC55S16\mcuxpresso" -Xlinker -Map="amoses_tab_4.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T amoses_tab_4_Debug.ld -u _printf_float -u _scanf_float -o "amoses_tab_4.axf" $(OBJS) $(USER_OBJS) $(LIBS) -lfro_calib_hardabi
+	arm-none-eabi-gcc -nostdlib -L"C:\workspace\amoses_track_and_balance\LPC55S16\mcuxpresso" -Xlinker -Map="amoses_tab_4.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T amoses_tab_4_Debug.ld -u _printf_float -u _scanf_float -o "amoses_tab_4.axf" $(OBJS) $(USER_OBJS) $(LIBS) -lfro_calib_hardabi
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -33,7 +33,6 @@
 #define ACCEL_ADC_BUFFER_LENGTH			ACCEL_ADC_SAMPLES_PER_REV + 50
 #define ACCEL_ADC_SAMPLES_PER_REV		1028
 #define TACHOMETER_POLARITY				1
-#define TACHOMETER_LED_FLASH_DURATION 	2			//in mS
 #define TACHOMETER_GINT					GINT1
 #define CTIMER_CLK_FREQ 				CLOCK_GetCTimerClkFreq(2U)
 #define CTIMER_MAT_STROBE  				kCTIMER_Match_1
@@ -60,13 +59,12 @@
 
 #define ADC_MAX_VALUE				65535
 #define ADC_REF_VOLTAGE				3.3
-#define ADC_LSB_RESOLUTION			ADC_REF_VOLTAGE / ADC_MAX_VALUE
-#define ADC_DC_BIAS					1.57
+#define ADC_LSB_RESOLUTION			ADC_REF_VOLTAGE / ADC_MAX_VALUE//#define ADC_DC_BIAS					1.57
 #define ACCEL_SENSITIVITY			10.0		//G per volt
 #define G_IN_S2						386.0885827
 #define PI							3.14159265359
 //-------------------------------------------------------------------------------------------------
-void init_gpio(void);
+void init_gpio(unsigned char tach_polarity);
 void init_tach_pinint(unsigned char polarity);
 void tach_callback(void);
 void adc_trigger_callback(void);

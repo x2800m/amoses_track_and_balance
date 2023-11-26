@@ -52,14 +52,15 @@ uint32_t	rpm_timer_ticks = 0xFFFFFFFF;
 uint8_t 	tach_cnt = 0;
 
 //The filter variables and coefficients
-float f1_a0 = 0.98441445;
-float f1_b0 = 0.00779278;
-float f1_b1 = 0.00779278;
+float 		f1_a0 = 0.98441445;
+float 		f1_b0 = 0.00779278;
+float 		f1_b1 = 0.00779278;
 uint16_t 	old_filtered_value = 0;
 uint16_t 	current_value = 0;
 uint16_t 	old_value = 0;
 uint8_t 	filter_enabled = 1;
 
+uint32_t 	button_iocon = 0;
 //-------------------------------------------------------------------------------------------------
 extern uint8_t flash_mode_var;
 extern TaskHandle_t tach_led_task_handle, data_processing_task_handle, strobe_task_handle;
@@ -113,7 +114,7 @@ void init_adc(void){
     IOCON_PinMuxSet(IOCON, ADC_PORT, ADC_PIN, adc_iocon);
 }
 //-------------------------------------------------------------------------------------------------
-void init_gpio(void){
+void init_gpio(unsigned char tach_polarity){
 
 	CLOCK_EnableClock(kCLOCK_Gpio0);
     CLOCK_EnableClock(kCLOCK_Gpio1);
@@ -134,13 +135,21 @@ void init_gpio(void){
         0,
     };
 
-    const uint32_t button_iocon = (
-									 IOCON_PIO_FUNC0 |
-									 IOCON_PIO_MODE_PULLUP |
-									 IOCON_PIO_SLEW_STANDARD |
-									 IOCON_PIO_INV_DI |
-									 IOCON_PIO_DIGITAL_EN |
-									 IOCON_PIO_OPENDRAIN_DI);
+    if(tach_polarity == 1){
+    	button_iocon  = (IOCON_PIO_FUNC0 |
+						 IOCON_PIO_MODE_PULLUP |
+						 IOCON_PIO_SLEW_STANDARD |
+						 IOCON_PIO_INV_DI |
+						 IOCON_PIO_DIGITAL_EN |
+						 IOCON_PIO_OPENDRAIN_DI);
+    }else{
+    	button_iocon = ( IOCON_PIO_FUNC0 |
+						 IOCON_PIO_MODE_PULLDOWN |
+						 IOCON_PIO_SLEW_STANDARD |
+						 IOCON_PIO_INV_DI |
+						 IOCON_PIO_DIGITAL_EN |
+						 IOCON_PIO_OPENDRAIN_DI);
+    }
 
     //Configure the outputs and turn off the LEDs
     GPIO_PinInit(GPIO, RED_LED_PORT, RED_LED_PIN, &rgb_led_config);

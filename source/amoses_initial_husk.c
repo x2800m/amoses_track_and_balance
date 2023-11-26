@@ -49,13 +49,13 @@ int main(void) {
     BOARD_InitBootPeripherals();
     BOARD_InitDebugConsole();
 
-    init_gpio();
+    init_gpio(TACHOMETER_POLARITY);
     init_tach_pinint(TACHOMETER_POLARITY);
     init_rpm_timer();
     init_adc();
     init_watchdog();
 
-    PRINTF("Amoses Track and Balance Init v0.1\n\r");
+    PRINTF("Amoses Track and Balance Init v0.9\n\r");
     PRINTF("S/N: FK-HU-NE-WEL-01\n\r");
 
     if(xTaskCreate(data_processing_task, "data_processing_task", configMINIMAL_STACK_SIZE + 1000, NULL, processing_task_PRIORITY, &data_processing_task_handle) != pdPASS){

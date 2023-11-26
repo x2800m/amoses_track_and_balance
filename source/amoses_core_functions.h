@@ -18,6 +18,11 @@
 #define FILTER_PHASE_SHIFT_DEG	17.0
 #define FILTER_AMP_GAIN_ADJ		1.2
 #define MAXIMUM_NUMBER_OF_DISPLAY_FORMATS 6
+
+
+#define TELEMETRY_USART          USART0
+//#define TELEMETRY_USART_CLK_SRC  kCLOCK_Flexcomm0
+#define TELEMETRY_USART_CLK_FREQ CLOCK_GetFlexCommClkFreq(0U)
 //-------------------------------------------------------------------------------------------------
 
 void tach_led_task(void *pvParameters);
@@ -34,6 +39,7 @@ void print_data(void);
 void kb_input_function(void);
 void data_telemetry_function(void);
 float convert_deg_to_clock(float input_deg);
+void init_uart0(void);
 //-------------------------------------------------------------------------------------------------
 
 #endif /* AMOSES_CORE_FUNCTIONS_H_ */

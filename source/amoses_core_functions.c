@@ -14,6 +14,8 @@
 #include "fsl_ctimer.h"
 #include "fsl_wwdt.h"
 #include "fsl_debug_console.h"
+#include "fsl_usart.h"
+#include "fsl_flexcomm.h"
 
 /* FreeRTOS headers */
 #include "FreeRTOS.h"
@@ -61,6 +63,7 @@ double rotor_ticks;
 float fundamental_freq = 0.0;
 uint32_t rotor_match_register_1 = 0;
 uint8_t strobe_active = 1;
+
 //-------------------------------------------------------------------------------------------------
 extern uint8_t  	raw_adc_buffer_selector;
 extern uint16_t 	raw_adc_buffer[2][ACCEL_ADC_BUFFER_LENGTH];
@@ -235,7 +238,6 @@ void data_telemetry_function(void){
 void kb_input_task(void *pvParameters){
 	while(1){
 		kb_input_function();
-		taskYIELD();
 	}
 }
 //-------------------------------------------------------------------------------------------------
@@ -243,7 +245,6 @@ void kb_input_function(void){
 	char kb_input;
 
 	kb_input = GETCHAR();
-	//DbgConsole_TryGetchar(&kb_input);
 	switch(kb_input){
 
 		case 'F':
@@ -356,4 +357,6 @@ void init_watchdog(void){
     config.clockFreq_Hz = WDT_CLK_FREQ;
     WWDT_Init(WWDT, &config);
 }
+//-------------------------------------------------------------------------------------------------
+
 //-------------------------------------------------------------------------------------------------
