@@ -46,6 +46,7 @@ double max_voltage_ac = 0.0;
 
 
 // Fixed point Analog variables
+uint8_t accel_inverted = 1;
 uint8_t buffer_to_search = 0;
 uint16_t min_value = 0xFFFF;
 uint16_t min_location = 0;
@@ -63,7 +64,8 @@ double rotor_ticks;
 float fundamental_freq = 0.0;
 uint32_t rotor_match_register_1 = 0;
 uint8_t strobe_active = 1;
-
+uint8_t current_number_of_blades = 4;
+uint32_t strobe_increment = 0;
 //-------------------------------------------------------------------------------------------------
 extern uint8_t  	raw_adc_buffer_selector;
 extern uint16_t 	raw_adc_buffer[2][ACCEL_ADC_BUFFER_LENGTH];
@@ -177,11 +179,6 @@ void data_processing_function(void){
 	fundamental_freq = (TIMER_TICS_PER_SEC/rotor_ticks);
 	rotor_rpm =  fundamental_freq * 60.0;
 
-	//Configure the strobe match register
-	rotor_match_register_1 = rpm_timer_ticks / NUMBER_OF_BLADES;
-	strobe_matchconfig.matchValue = rotor_match_register_1;
-	CTIMER_SetupMatch(RPM_CTIMER, CTIMER_MAT_STROBE, &strobe_matchconfig);
-
 	//Determine the average value of the ADC capture array.
 	average_adc_raw = average_raw_adc_values(buffer_to_search, raw_adc_meaningful_buffer_length[buffer_to_search]);
 
@@ -213,6 +210,9 @@ void data_processing_function(void){
 		if(max_location_deg >= 360.0){
 			max_location_deg -= 360.0;
 		}
+		if(max_location_deg < 0.0){
+			max_location_deg += 360.0;
+		}
 
 		pk_to_pk_v *= FILTER_AMP_GAIN_ADJ;
 	}
@@ -227,6 +227,9 @@ void data_processing_function(void){
 
 	//Determine the peak IPS
 	fundamental_ips = (G_IN_S2 * max_acceleration_g) / (2.0 * PI * fundamental_freq);
+
+	//This adjustment comes from the comparison with the Asti Chadwick
+	fundamental_ips /= CHADWICK_ADJ_SCALAR;
 
 	shift_and_generate_averages();
 }
@@ -276,6 +279,26 @@ void kb_input_function(void){
 				strobe_active = 1;
 				PRINTF("STROBE ENABLED\n\r");
 			}
+			break;
+
+		case 'A':
+		case 'a':
+			if(accel_inverted == 1){
+				accel_inverted = 0;
+				PRINTF("ACCELEROMETER NORMAL\n\r");
+			}else{
+				accel_inverted = 1;
+				PRINTF("ACCELEROMETER INVERTED\n\r");
+			}
+			break;
+
+		case 'B':
+		case 'b':
+			current_number_of_blades++;
+			if(current_number_of_blades > MAX_NUMBER_OF_BLADES){
+				current_number_of_blades = 2;
+			}
+			PRINTF("NUMBER OF BLADES: %d\n\r", current_number_of_blades);
 			break;
 
 		default:

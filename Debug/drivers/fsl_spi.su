@@ -1,4 +1,4 @@
-C:\workspace\amoses_track_and_balance\CMSIS/core_cm33.h:2378:22:__NVIC_EnableIRQ	16	static
+C:\amoses_workspace\amoses_track_and_balance\CMSIS/core_cm33.h:2378:22:__NVIC_EnableIRQ	16	static
 ../drivers/fsl_common_arm.h:514:24:EnableIRQ	24	static
 ../drivers/fsl_spi.h:413:20:SPI_Enable	16	static
 ../drivers/fsl_spi.h:553:20:SPI_SetTransferDelay	16	static

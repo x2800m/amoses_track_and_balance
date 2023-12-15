@@ -30,6 +30,7 @@
 #define ADC_PORT				0U
 #define ADC_PIN					23U
 //-------------------------------------------------------------------------------------------------
+#define ACCELEROMETER_INVERT_DEFAULT	1
 #define ACCEL_ADC_BUFFER_LENGTH			ACCEL_ADC_SAMPLES_PER_REV + 50
 #define ACCEL_ADC_SAMPLES_PER_REV		1028
 #define TACHOMETER_POLARITY				1
@@ -41,8 +42,9 @@
 #define RPM_CTIMER						CTIMER2
 #define TIMER_TICS_PER_SEC				96000000
 
-#define NUMBER_OF_BLADES 				2
-#define STROBE_FLASH_DURATION_US		500
+#define MAX_NUMBER_OF_BLADES			6
+#define DEFAULT_NUMBER_OF_BLADES 		4
+#define STROBE_FLASH_DURATION_US		1000
 //-------------------------------------------------------------------------------------------------
 #define MEASUREMENT_AVERAGE_SIZE		60
 #define VOLTAGE_AVERAGE_SIZE			1000
@@ -71,7 +73,7 @@ void adc_trigger_callback(void);
 void init_rpm_timer(void);
 void strobe_callback(void);
 void init_adc(void);
-void strobe_flash(void);
+void strobe_flash(uint8_t increment_strobe_match);
 void anti_strobe_callback(void);
 
 #endif /* AMOSES_TRACK_AND_BALANCE_H_ */

@@ -63,7 +63,11 @@ uint8_t 	filter_enabled = 1;
 uint32_t 	button_iocon = 0;
 //-------------------------------------------------------------------------------------------------
 extern uint8_t flash_mode_var;
+extern uint8_t accel_inverted;
 extern TaskHandle_t tach_led_task_handle, data_processing_task_handle, strobe_task_handle;
+extern uint8_t current_number_of_blades;
+extern uint8_t current_strobe_count;
+extern uint32_t strobe_increment;
 //-------------------------------------------------------------------------------------------------
 void init_adc(void){
     lpadc_config_t 					mLpadcConfigStruct;
@@ -227,6 +231,10 @@ void adc_trigger_callback(void){
 	while (!LPADC_GetConvResult(ADC_BASE, &adc_result_struct, 0U));
 	new_measurement = adc_result_struct.convValue;
 
+	if(accel_inverted == 1){
+		new_measurement = 0xFFFF - new_measurement;
+	}
+
 	if(filter_enabled == 1){
 		current_value = new_measurement;
 		raw_adc_buffer[raw_adc_buffer_selector][raw_adc_collection_index] = (uint16_t)( (f1_a0 * old_filtered_value) +
@@ -257,12 +265,18 @@ void adc_trigger_callback(void){
 }
 //-------------------------------------------------------------------------------------------------
 void strobe_callback(void){
-	strobe_flash();
+	strobe_flash(1);
 }
 //-------------------------------------------------------------------------------------------------
-void strobe_flash(void){
+void strobe_flash(uint8_t increment_strobe_match){
 	uint32_t strobe_future_time = 0;
 	GPIO_PinWrite(GPIO, GREEN_LED_PORT, GREEN_LED_PIN, 1);
+
+	if(increment_strobe_match == 1){
+		strobe_matchconfig.matchValue += strobe_increment;
+		CTIMER_SetupMatch(RPM_CTIMER, CTIMER_MAT_STROBE, &strobe_matchconfig);
+	}
+
 	strobe_future_time = RPM_CTIMER->TC;
 	anti_strobe_matchconfig.matchValue = strobe_future_time + ((TIMER_TICS_PER_SEC / 1000000) * STROBE_FLASH_DURATION_US);
 	CTIMER_SetupMatch(RPM_CTIMER, CTIMER_MAT_ANTI_STROBE, &anti_strobe_matchconfig);
@@ -288,13 +302,14 @@ void tach_callback(void){
 	raw_adc_buffer_selector = (~raw_adc_buffer_selector) & 0x00000001;	//Toggle buffer selection
 	raw_adc_collection_index = 0;										//Reset ADC buffer index selection to zero.
 
-	strobe_matchconfig.matchValue = rpm_timer_ticks/2;
+	strobe_increment = rpm_timer_ticks / current_number_of_blades;
+	strobe_matchconfig.matchValue = strobe_increment;
 	CTIMER_SetupMatch(RPM_CTIMER, CTIMER_MAT_STROBE, &strobe_matchconfig);
 
 	adc_matchconfig.matchValue = current_adc_match_value_increment;
 	CTIMER_SetupMatch(RPM_CTIMER, CTIMER_MAT_ADC, &adc_matchconfig);
 
-	strobe_flash();
+	strobe_flash(0);
 	tach_cnt ++;
 
 	//Trigger the data_handling task

@@ -15,7 +15,8 @@
 #define APP_WDT_IRQ_HANDLER 	WDT_BOD_IRQHandler
 #define WDT_CLK_FREQ 			CLOCK_GetWdtClkFreq()
 #define WATCHDOG_KICK_DELAY_MS	100
-#define FILTER_PHASE_SHIFT_DEG	17.0
+#define FILTER_PHASE_SHIFT_DEG	-28.0	//17 degrees when testing on the lathe.
+#define CHADWICK_ADJ_SCALAR		6.6
 #define FILTER_AMP_GAIN_ADJ		1.2
 #define MAXIMUM_NUMBER_OF_DISPLAY_FORMATS 6
 

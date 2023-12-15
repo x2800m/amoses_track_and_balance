@@ -1,5 +1,5 @@
-C:\workspace\amoses_track_and_balance\drivers/fsl_clock.h:987:20:CLOCK_EnableClock	24	static
-C:\workspace\amoses_track_and_balance\drivers/fsl_iocon.h:182:22:IOCON_PinMuxSet	24	static
+C:\amoses_workspace\amoses_track_and_balance\drivers/fsl_clock.h:987:20:CLOCK_EnableClock	24	static
+C:\amoses_workspace\amoses_track_and_balance\drivers/fsl_iocon.h:182:22:IOCON_PinMuxSet	24	static
 ../board/pin_mux.c:32:6:BOARD_InitBootPins	8	static
 ../board/pin_mux.c:63:6:BOARD_InitDEBUG_UARTPins	32	static
 ../board/pin_mux.c:235:6:BOARD_InitSWD_DEBUGPins	24	static
